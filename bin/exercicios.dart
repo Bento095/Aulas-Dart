@@ -1,7 +1,7 @@
 import 'dart:io';
 
 void main() {
-  calcularSalario();
+  geradorDeCupons();
 }
 
 void olaNome() {
@@ -33,12 +33,12 @@ void calculaDobro() {
 
 void calculaMediaIdades() {
   print('Digite a idade da primeira pessoa: ');
-  double idadeUm = double.parse(stdin.readLineSync()!);
+  double idadeUm = double.parse(stdin.readLineSync()!); //podia ter usado int
   print('Digite a idade da segunda pessoa: ');
   double idadeDois = double.parse(stdin.readLineSync()!);
   print('Digite a idade da terceira pessoa: ');
   double idadeTres = double.parse(stdin.readLineSync()!);
-  var media = (idadeUm + idadeDois + idadeTres) / 3;
+  var media = (idadeUm + idadeDois + idadeTres) / 3; //aqui podia ser double
   print('A média das idades é $media');
 }
 
@@ -86,35 +86,22 @@ void calcularSalario() {
 
 }
 
-/* 5) Consertando erros em um programa
-Você está trabalhando em um programa de banco, que faz três ações:
+// 5 continua em outro arquivo (corrigir.dart)
 
-Mostrar o saldo bancário do usuário;
-Permitir que o usuário faça uma transferência pix (de forma simplificada);
-Subtrair o valor do pix do valor de saldo.
-No entanto, o código possui erros. Analise-o com atenção:
+// 6 continua em atividadeSeis.dart
 
-import 'dart:io';
+// 7 complementar ao 6
 
-string saldo = 1000.0; // Saldo inicial em reais
+/* 8) Implementando um programa de cupons
+Escreva um programa que informa quantos cupons um cliente ganhou ao fazer compras no mercado No Precinho. A regra da promoção é: a cada 50 reais gastos por compra, a pessoa recebe um cupom. O programa deve:
 
-void main() {
-  print('Boas-vindas ao seu banco digital!')
-  print('Seu saldo atual é de: R\$${saldo.toStringAsFixed(2)}')
+Capturar a entrada com o valor gasto;
+Exibir mensagem de quantos cupons foram ganhos.*/
 
-  print('Digite o valor do Pix que deseja realizar:');
-  double valorPix = double.parse(stdin.readLineSync());
-
-  saldo -= valorPix;
-
-  print('Pix realizado com sucesso!')
-  print('Seu saldo atual é de: R\$${saldo.toStringAsFixed(2)}');
+void geradorDeCupons() {
+  print('Digite o valor gasto: ');
+  double gasto = double.parse(stdin.readLineSync()!);
+  double cupons = (gasto / 50);
+  int cuponsInteiros = cupons.truncate();
+  print('Você recebeu $cuponsInteiros cupons nessa compra'); 
 }
-Copiar código
-Logo, sua tarefa faça as correções no código acima. Veja as dicas:
-
-Abra um novo projeto Dart em seu computador;
-Copie e cole o código acima;
-Faça os ajustes necessários no código;
-Rode o programa no terminal e verifique se ele apresenta os comportamentos esperados. */
-
