@@ -3,12 +3,10 @@ import 'dart:io';
 
 //corpo principal do programa.
 void main() {
-  print('Digite o primeiro número: ');
-  double numeroUm = double.parse(stdin.readLineSync()!);
-  print('Escolha a operação (+ - / *): ');
-  String operacao = stdin.readLineSync()!;
-  print('Digite o segundo número: ');
-  double numeroDois = double.parse(stdin.readLineSync()!);
+  print('Calculadora Dart');
+  double numeroUm = 0;
+  String operacao = '';
+  double numeroDois = 0;
 
 // bloco de definir as operações por função.
   void soma() {
@@ -27,36 +25,48 @@ void main() {
     print(numeroUm * numeroDois);
   }
 
+  void calcular() {
+    switch (operacao) {
+      case '+':
+      soma();
 
-  //bloco das operações por if/else.
-  if (operacao == '+') {
-    soma();
-  } else{
-    if (operacao == '-') {
-        subtracao();
-      } else {
-        if (operacao == '/') {
-            divisao();
-          } else {
-            if (operacao == '*') {
-            multiplicacao();
-        }
-      }
+      case '-':
+      subtracao();
+
+      case '/':
+      divisao();
+
+      case '*':
+      multiplicacao();
+      break;
+    }
+
+  }
+
+print('Digite o primeiro número: ');
+String? entrada = stdin.readLineSync();
+
+if (entrada != null) {
+  if (entrada != ''){
+    numeroUm = double.parse(entrada);
+  }
+}
+
+print('Digite a operação (+, -, *, /): ');
+entrada = stdin.readLineSync();
+if (entrada != null) {
+  operacao = entrada;
+}
+
+print('Digite o segundo número: ');
+entrada = stdin.readLineSync();
+if (entrada != null) {
+  if (entrada != ''){
+    numeroDois = double.parse(entrada);
     }
   }
 
-  switch (operacao) {
-    case '+':
-    soma();
+  print('Resultado: ');
+  calcular();
 
-    case '-':
-    subtracao();
-
-    case '/':
-    divisao();
-
-    case '*':
-    multiplicacao();
-    break;
-  }
 }
