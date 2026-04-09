@@ -6,23 +6,35 @@ Escreva um programa em Dart que verifica se uma pessoa pode ou não dirigir um v
 import 'dart:io';
 
 void main(){
-  carteiraMotorista();
+  mesEmNumeros();
 }
 
+void carteiraDeMotorista() {
+  print('*** Carteira de Motorista ***');
+  stdout.write('Digite sua idade: ');
+  String? entrada = stdin.readLineSync()?.trim() ?? ''; // deixa tudo em um linha e ?? '' transforma o nulo em vazia.
+  int idade = int.tryParse(entrada) ?? 0;
 
-void carteiraMotorista() {
-  int idade = 0;
-  print('carteira de motorista');
-  print('digite a sua idade: ');
-  String? entrada = stdin.readLineSync();
-  if (entrada != null) {
-    if (entrada != '') {
-      idade = int.parse(entrada);
-    }
-  if (idade <= 17) {
-    print('nao pode');
+  if (idade >= 18) {
+    print('✅ Pode tirar a carteira! (Idade: $idade)');
+  } else if (idade > 0) {
+    print('❌ Não pode. (Idade: $idade)');
   } else {
-    print('pode');
+    print('⚠️ Entrada inválida. Digite um número real.');
   }
+}
+
+/* 2) Retornando os meses do ano
+Desenvolva um programa em Dart que solicita ao usuário que digite um número de 1 a 12 e retorna o mês correspondente do ano. Por exemplo, ao digitar 2, o programa retorna a mensagem “Fevereiro”.*/
+
+void mesEmNumeros() {
+  var meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
+  print('--- Mes em numeros ---');
+  stdout.write('Digite um número de 1 a 12: ');
+  int escolha = int.tryParse(stdin.readLineSync() ?? '') ?? 0;
+  if (escolha >= 1 && escolha <= 12) {
+    print('O mês escolhido é: ${meses[escolha - 1]}'); // subtrai 1 pq começa em 0
+  } else {
+    stderr.write('Mês invalido!');
   }
 }
