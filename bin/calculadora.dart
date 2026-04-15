@@ -7,6 +7,8 @@ void main() {
   double numeroUm = 0;
   String operacao = '';
   double numeroDois = 0;
+  String? entrada = '';
+  List<String> operacoes = <String>['+','-','*','/'];
 
 // bloco de definir as operações por função.
   void soma() {
@@ -40,33 +42,40 @@ void main() {
       multiplicacao();
       break;
     }
-
   }
 
+  void getOperacao() {
+  print('Digite a operação ${operacoes.toString()}: ');
+  entrada = stdin.readLineSync();
+  if (entrada != null) {
+    if (operacoes.contains(entrada)){
+      operacao = entrada!;
+    } else {
+      print('Operação inválida');
+      getOperacao();
+    }
+  }
+}
+
 print('Digite o primeiro número: ');
-String? entrada = stdin.readLineSync();
+entrada = stdin.readLineSync();
 
 if (entrada != null) {
   if (entrada != ''){
-    numeroUm = double.parse(entrada);
+    numeroUm = double.parse(entrada!);
   }
 }
 
-print('Digite a operação (+, -, *, /): ');
-entrada = stdin.readLineSync();
-if (entrada != null) {
-  operacao = entrada;
-}
+getOperacao();
 
 print('Digite o segundo número: ');
 entrada = stdin.readLineSync();
 if (entrada != null) {
   if (entrada != ''){
-    numeroDois = double.parse(entrada);
+    numeroDois = double.parse(entrada!);
     }
   }
 
   print('Resultado: ');
   calcular();
-
 }
