@@ -104,10 +104,10 @@ void maioridade() {
 
   // fazer um comparador dinamico de  pais
   if (pais.isNotEmpty && !paises.containsKey(pais)){
-    print('pais nao encontrado');
+    print('Pais $pais não encontrado na lista');
   }else if (idade >= paises[pais]!) {
-    print('Pode dirigir!');
+    print('$pais permite você dirigir com sua idade!');
   }else{
-    print('pode nao');
+    print('Idade minima para dirigir em $pais é ${paises[pais]} anos!');
   }
 }
