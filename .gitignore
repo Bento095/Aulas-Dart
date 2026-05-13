@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Created by https://www.toptal.com/developers/gitignore/api/dart
 # Edit at https://www.toptal.com/developers/gitignore?templates=dart
 
@@ -35,3 +36,8 @@ doc/api/
 .env
 
 # End of https://www.toptal.com/developers/gitignore/api/dart
+=======
+# https://dart.dev/guides/libraries/private-files
+# Created by `dart pub`
+.dart_tool/
+>>>>>>> 1a10d271e269c1b26049275e78ef057a3361060c

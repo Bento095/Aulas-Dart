@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 name: calculadora
+=======
+name: notas
+>>>>>>> 1a10d271e269c1b26049275e78ef057a3361060c
 description: A sample command-line application.
 version: 1.0.0
 # repository: https://github.com/my_org/my_repo

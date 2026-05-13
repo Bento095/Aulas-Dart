@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 🧮 Projeto: Calculadora Dart (Aula Guiada Da ALURA)
 Este repositório contém o código desenvolvido durante a aula prática, seguindo o passo a passo do professor para entender a estrutura de um app CLI (Command Line Interface).
 
@@ -21,3 +22,7 @@ Fluxo de Execução: Entendimento de como o Dart lê o código de cima para baix
 Dart SDK
 
 Biblioteca dart:io
+=======
+A sample command-line application with an entrypoint in `bin/`, library code
+in `lib/`, and example unit test in `test/`.
+>>>>>>> 1a10d271e269c1b26049275e78ef057a3361060c

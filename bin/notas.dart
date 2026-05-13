@@ -41,11 +41,15 @@ void listarNotas(List<String> notas) {
 }
 
 void menu(List<String> notas) {
+<<<<<<< HEAD
   /*print("\x1B[2J\x1B[0;0H");*/
   art();
   print('');
   String comando = getComando();
   print('');
+=======
+  String comando = getComando();
+>>>>>>> 1a10d271e269c1b26049275e78ef057a3361060c
 
 
   switch (comando) {
@@ -60,6 +64,7 @@ void menu(List<String> notas) {
 
 
   }
+<<<<<<< HEAD
 }
 
 void art() {
@@ -71,4 +76,6 @@ void art() {
   print( "  |___/ \\__,_|_|   \\__|      \\_| \\_/\\___/ \\__\\___||___/  ");
   print( "                                                         ");
   print( "                                                         ");
+=======
+>>>>>>> 1a10d271e269c1b26049275e78ef057a3361060c
 }
